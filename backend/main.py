@@ -4,7 +4,7 @@
 
 # 1.) Order sorting using Queue/Linked List 
 
-# Person 1 - Create the menu data models 
+# Erin - Create the menu data models 
 """
 - add all real menu items (drinks, bakery, grill)
 - Assign each item a prep category or time estimate (short, medium, long)
