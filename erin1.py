@@ -45,9 +45,8 @@ class MenuItem:
 
 
 MENU_ITEMS: List[MenuItem] = [
-    # -------------------------
+
     # COFFEE / DRINKS
-    # -------------------------
     MenuItem("Coffee", "drinks", 1, 1, 2.50),
     MenuItem("Hot Tea", "drinks", 1, 1, 2.25),
     MenuItem("Iced Coffee", "drinks", 1, 1, 3.00),
@@ -60,9 +59,8 @@ MENU_ITEMS: List[MenuItem] = [
     MenuItem("Smoothie", "drinks", 2, 4, 5.75),
     MenuItem("Milkshake", "drinks", 2, 4, 5.95),
 
-    # -------------------------
+
     # BAKERY / GRAB-AND-GO
-    # -------------------------
     MenuItem("Bagel", "bakery", 1, 1, 2.50),
     MenuItem("Bagel with Cream Cheese", "bakery", 1, 2, 3.25),
     MenuItem("Croissant", "bakery", 1, 1, 3.25),
@@ -71,9 +69,8 @@ MENU_ITEMS: List[MenuItem] = [
     MenuItem("Brownie", "bakery", 1, 1, 2.25),
     MenuItem("Grilled Cheese", "bakery", 2, 4, 6.25),
 
-    # -------------------------
+
     # GRILL / HOT FOOD
-    # -------------------------
     MenuItem("Fries", "grill", 1, 3, 3.50),
     MenuItem("Onion Rings", "grill", 1, 4, 4.25),
     MenuItem("Chicken Wings", "grill", 3, 7, 8.95),
@@ -90,10 +87,8 @@ MENU_ITEMS: List[MenuItem] = [
     MenuItem("Salad", "grill", 2, 3, 6.75),
     MenuItem("Chicken Salad", "grill", 3, 4, 8.25),
 
-    # -------------------------
     # STORE / PACKAGED ITEMS
     # These should usually be "short" because they are grab-and-go.
-    # -------------------------
     MenuItem("Bottled Water", "store", 1, 0, 2.00, True),
     MenuItem("Sparkling Water", "store", 1, 0, 2.50, True),
     MenuItem("Soda", "store", 1, 0, 2.50, True),
