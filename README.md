@@ -4,7 +4,7 @@ This project simulates an ordering system that:
 
 - Classifies orders by prep effort (short, medium, long)
 - Uses a rotating multi-queue system to reduce wait times
-- Tracks inventory with stock levels and low-stock alerts
+- Tracks inventory with stock levels and low-stock alerts using hash tables
 
 ## How to Run:
 Open the Python file
