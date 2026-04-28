@@ -8,7 +8,9 @@ This project simulates an ordering system that:
 
 ## How to Run:
 Open the Python file
+
 cd to your file location 
+
 run the command python main.py 
 
 Then, follow the instructions in the terminal to:
