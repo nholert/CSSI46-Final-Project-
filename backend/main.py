@@ -171,34 +171,47 @@ if __name__ == "__main__":
         print(f"Category: {category}")
         print("-" * 40)
 
-# Person 2 - Order sorting system using queue/linked list 
-"""
-- use queue/linked list to sort orders based on a rotation between in-person orders, short orders, 
-  medium orders, and long orders
+from collections import deque
 
-"""
+class OrderManager:
+  def __init__(self):
+    self.in_person_queue = deque()
+    self.short_queue = deque()
+    self.medium_queue = deque()
+    self.long_queue = deque()
 
-# 2.) Inventory management using a Hash Table - Ishita
+    self.rotation = ["in_person", "short", "medium", "long"]
+    self.index = 0
 
-# Person 3 - Inventory managaement using hash table 
-"""
-- add all real menu items (drinks, bakery, grill)
-- for each item, map: 
-     - number of times ordered
-     - ingredients required
-     - current stock
-     - reorder threshold
-            Example:
-            inventory["burger"] = {
-            "timesOrdered": 120,
-            "stock": 35,
-            "reorderThreshold": 20
-"""
+  def add_order(self, order):
+    if order["source"] == "in-person":
+      self.in_person_queue.append(order)
+    elif order["category"] == "short":
+      self.short_queue.append(order)
+    elif order["category"] == "medium":
+      self.medium_queue.append(order)
+    elif order["category"] == "long":
+      self.long_queue.append(order)
 
-# -----------------------------------
-# Person 3: Inventory Management
-# CMC Hub Order Management System
-# -----------------------------------
+  def get_next_order(self):
+    for _ in range(4):
+      current = self.rotation[self.index]
+      if current == "in_person" and self.in_person_queue:
+        self.index = (self.index + 1) % 4
+        return self.in_person_queue.popleft()
+      elif current == "short" and self.short_queue:
+        self.index = (self.index + 1) % 4
+        return self.short_queue.popleft()
+      elif current == "medium" and self.medium_queue:
+        self.index = (self.index + 1) % 4
+          eturn self.medium_queue.popleft()
+      elif current == "long" and self.long_queue:
+        self.index = (self.index + 1) % 4
+        return self.long_queue.popleft()
+
+      self.index = (self.index + 1) % 4
+
+    return None
 
 class HashTable:
     def __init__(self, size=50):
