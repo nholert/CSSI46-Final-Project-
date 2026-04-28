@@ -2,16 +2,9 @@
 # CMC Hub Order Management System 
 
 
-# This file... 
-
-#
-# - IMPORTANT:
-#   prep_points are for INDIVIDUAL items.
-#   The ORDER module should sum prep_points across all items in an order
-#   and then classify the ENTIRE order as:
-#       short  = 1 to 3 points
-#       medium = 4 to 6 points
-#       long   = 7+ points
+# This file simulates an ordering system that classifies orders by prep effort,
+# processes them using a rotating multi-queue (instead of FIFO),
+# and tracks inventory using a hash table with low-stock alerts. 
 
 from dataclasses import dataclass
 from typing import Dict, List
@@ -143,6 +136,7 @@ def classify_order(item_names: List[str], customizations: int = 0) -> str:
 
 
 # Part II: Order Manager - keeping queues of orders to minimize wait time
+# orders rotate between four queues: in-person, short, medium, and long orders
 
 class OrderManager:
   def __init__(self):
@@ -295,7 +289,7 @@ class InventoryManager:
             print(f"{item_name}: stock = {stock}, reorder threshold = {threshold}")
     
 
-# Part IV: Program Output
+# Part IV: Program Output // Demo
 
 
 def create_order(order_id, customer_name, source, item_names, customizations=0):
